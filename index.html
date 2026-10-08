@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título y Metadatos SEO -->
+  <title>Scroll Studio — Desarrollo Web a Medida | Thiago Paulovich Garcia</title>
+  <meta name="description" content="Estudio de desarrollo web freelance en Argentina. Creamos landing pages, tiendas online, sitios institucionales y desarrollos a medida 100% programados de cero, sin plantillas. Pedí tu presupuesto sin compromiso.">
+  <meta name="author" content="Thiago Paulovich Garcia - Scroll Studio">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0d14">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Scroll Studio">
+  <meta property="og:title" content="Scroll Studio — Desarrollo Web a Medida | Thiago Paulovich Garcia">
+  <meta property="og:description" content="Páginas web a medida que hacen crecer tu negocio. Programación de cero, sin plantillas, rápidas y pensadas para vender.">
+  <meta property="og:image" content="assets/todo-vinos.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scroll Studio — Desarrollo Web a Medida">
+  <meta name="twitter:description" content="Desarrollo de sitios web a medida para pymes, profesionales y tiendas online. 100% código personalizado por Thiago Paulovich Garcia.">
+  <meta name="twitter:image" content="assets/todo-vinos.png">
+
+  <!-- Favicon en formato SVG -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll interactiva fija en el tope -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Enlace accesible para saltar al contenido principal con teclado -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- 1. HEADER FIJO -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <!-- Logo y marca -->
+      <a href="#hero" class="brand-logo" aria-label="Scroll Studio - Inicio">
+        <span class="logo-icon-wrapper" aria-hidden="true">
+          <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="rgba(0, 245, 160, 0.12)" />
+            <path d="M21 10C21 8.34315 19.6569 7 18 7H13C10.2386 7 8 9.23858 8 12C8 14.7614 10.2386 17 13 17H19C21.7614 17 24 19.2386 24 22C24 24.7614 21.7614 27 19 27H12C10.3431 27 9 25.6569 9 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="17" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-text">Scroll<span class="brand-accent">Studio</span></span>
+      </a>
+
+      <!-- Navegación principal por anclas -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#por-que-nosotros" class="nav-link">Por qué elegirnos</a></li>
+          <li><a href="#proceso" class="nav-link">Proceso</a></li>
+          <li><a href="#portfolio" class="nav-link">Proyecto</a></li>
+          <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón CTA en header y botón de menú mobile -->
+      <div class="header-actions">
+        <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%0A%0AQuisiera%20pedirte%20presupuesto%20para%20un%20proyecto%20web.%0A%0A-%20Nombre%20o%20marca%3A%20%0A-%20Tipo%20de%20sitio%20(Landing%20%2F%20Institucional%20%2F%20Ecommerce%20%2F%20Profesional%20%2F%20A%20medida)%3A%20%0A-%20Detalles%20de%20la%20idea%3A%20%0A%0AGracias!" class="btn btn-sm btn-primary header-cta">
+          <span>Pedí tu presupuesto</span>
+          <svg class="icon-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Botón toggle para dispositivos móviles -->
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú de navegación">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main-content">
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-bg" aria-hidden="true"></div>
+      <div class="container hero-container">
+        
+        <!-- Badge de disponibilidad -->
+        <div class="hero-badge reveal">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <span>Desarrollo web artesanal · Disponibilidad inmediata</span>
+        </div>
+
+        <!-- Título principal potente -->
+        <h1 class="hero-title reveal">
+          Páginas web a medida que hacen <span class="gradient-text">crecer tu negocio</span>.
+        </h1>
+
+        <!-- Subtítulo explicativo -->
+        <p class="hero-subtitle reveal">
+          En <strong>Scroll Studio</strong> diseñamos y programamos sitios web 100% personalizados para pymes, emprendedores, profesionales y marcas. Nada de plantillas genéricas ni atajos: código limpio, máxima velocidad y pensados de verdad para convertir visitas en clientes.
+        </p>
+
+        <!-- Botones de llamada a la acción -->
+        <div class="hero-cta-group reveal">
+          <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%0A%0AQuisiera%20pedirte%20presupuesto%20para%20un%20proyecto%20web.%0A%0A-%20Nombre%20o%20marca%3A%20%0A-%20Tipo%20de%20sitio%20(Landing%20%2F%20Institucional%20%2F%20Ecommerce%20%2F%20Profesional%20%2F%20A%20medida)%3A%20%0A-%20Detalles%20de%20la%20idea%3A%20%0A%0AGracias!" class="btn btn-lg btn-primary">
+            <span>Pedí tu presupuesto</span>
+            <svg class="icon-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          
+          <a href="#portfolio" class="btn btn-lg btn-secondary">
+            <span>Ver proyecto destacado</span>
+            <svg class="icon-down" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 3V13M8 13L3.5 8.5M8 13L12.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Puntos clave de confianza / micro-estadísticas -->
+        <div class="hero-highlights reveal">
+          <div class="highlight-item">
+            <span class="highlight-check" aria-hidden="true">✓</span>
+            <div>
+              <strong>100% a medida</strong>
+              <small>Cero plantillas prefabricadas</small>
+            </div>
+          </div>
+          <div class="highlight-divider" aria-hidden="true"></div>
+          <div class="highlight-item">
+            <span class="highlight-check" aria-hidden="true">✓</span>
+            <div>
+              <strong>Trato directo</strong>
+              <small>Hablás con quien programa</small>
+            </div>
+          </div>
+          <div class="highlight-divider" aria-hidden="true"></div>
+          <div class="highlight-item">
+            <span class="highlight-check" aria-hidden="true">✓</span>
+            <div>
+              <strong>Mobile-First</strong>
+              <small>Carga rápida en celular</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SERVICIOS -->
+    <section class="section-padding services-section" id="servicios">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-tag">SERVICIOS</span>
+          <h2 class="section-title">Soluciones web desarrolladas para tus objetivos reales</h2>
+          <p class="section-description">
+            No obligamos a tu negocio a encajar en una plantilla rígida. Programamos la herramienta exacta que necesitás para comunicar, vender y generar confianza.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Servicio 1: Landing Pages -->
+          <article class="service-card reveal">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="service-title">Landing Pages de Alta Conversión</h3>
+            <p class="service-text">
+              Páginas de aterrizaje enfocadas en un único objetivo: convertir visitantes en contactos, ventas o suscriptores. Ideales para campañas de publicidad (Google y Meta Ads), lanzamiento de productos o validación de ideas de negocio.
+            </p>
+            <ul class="service-tags" aria-label="Características destacadas">
+              <li>Estructura persuasiva</li>
+              <li>Velocidad extrema</li>
+              <li>Llamados a la acción claros</li>
+            </ul>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20Landing%20Page%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20pedir%20presupuesto%20para%20una%20Landing%20Page.%20" class="service-link">
+              <span>Consultar por Landing Page</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Servicio 2: Sitios Institucionales -->
+          <article class="service-card reveal">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Sitios Institucionales & Corporativos</h3>
+            <p class="service-text">
+              La cara visible y profesional de tu empresa o pyme en internet. Mostrá quién sos, qué hacés, tus casos de éxito y tus valores de marca con un diseño moderno que transmita solidez y credibilidad desde el primer segundo.
+            </p>
+            <ul class="service-tags" aria-label="Características destacadas">
+              <li>Imagen de marca sólida</li>
+              <li>Múltiples secciones</li>
+              <li>Optimización SEO base</li>
+            </ul>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20Sitio%20Institucional%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20pedir%20presupuesto%20para%20un%20sitio%20institucional.%20" class="service-link">
+              <span>Consultar por Institucional</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Servicio 3: Tiendas Online / Ecommerce -->
+          <article class="service-card service-card--featured reveal">
+            <div class="featured-badge">Más demandado</div>
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Tiendas Online & Ecommerce</h3>
+            <p class="service-text">
+              Vendé tus productos las 24 horas del día. Desarrollamos tiendas virtuales ágiles con catálogo interactivo, filtros rápidos, carrito de compras y pasarelas de pago integradas, diseñadas para que la experiencia de compra sea simple y sin fricción.
+            </p>
+            <ul class="service-tags" aria-label="Características destacadas">
+              <li>Catálogo dinámico</li>
+              <li>Pasarelas de pago</li>
+              <li>Experiencia fluida</li>
+            </ul>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20Tienda%20Online%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20pedir%20presupuesto%20para%20una%20tienda%20online.%20" class="service-link">
+              <span>Consultar por Tienda Online</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Servicio 4: Sitios para Profesionales -->
+          <article class="service-card reveal">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h3 class="service-title">Sitios para Profesionales</h3>
+            <p class="service-text">
+              Espacios digitales pensados para médicos, abogados, contadores, arquitectos, psicólogos y consultores. Destacá tu trayectoria, explicá tus servicios en detalle y facilitá que los pacientes o clientes reserven turnos o te contacten por WhatsApp.
+            </p>
+            <ul class="service-tags" aria-label="Características destacadas">
+              <li>Marca personal</li>
+              <li>Contacto ágil</li>
+              <li>Confianza & reputación</li>
+            </ul>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20Sitio%20Profesional%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20pedir%20presupuesto%20para%20un%20sitio%20profesional.%20" class="service-link">
+              <span>Consultar por Sitio Profesional</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Servicio 5: Desarrollos a Medida -->
+          <article class="service-card reveal">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Sistemas & Desarrollos a Medida</h3>
+            <p class="service-text">
+              Cuando las soluciones estándar se quedan cortas. Creamos paneles de administración, cotizadores dinámicos, calculadoras personalizadas o plataformas con lógica específica adaptada a los flujos y procesos exactos de tu negocio.
+            </p>
+            <ul class="service-tags" aria-label="Características destacadas">
+              <li>Lógica propia</li>
+              <li>Automatización</li>
+              <li>100% escalable</li>
+            </ul>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20Desarrollo%20a%20Medida%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20pedir%20presupuesto%20para%20un%20desarrollo%20a%20medida.%20" class="service-link">
+              <span>Consultar por Desarrollo a Medida</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- Banner de asesoramiento sin costo -->
+        <div class="services-callout reveal">
+          <div class="callout-content">
+            <h4 class="callout-title">¿No sabés exactamente qué formato necesita tu idea?</h4>
+            <p class="callout-text">No te preocupes. Me contás qué querés lograr y te oriento sin compromiso sobre la mejor solución para tu presupuesto y etapa actual.</p>
+          </div>
+          <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quiero%20contarte%20mi%20proyecto%20para%20recibir%20asesoramiento%20y%20presupuesto." class="btn btn-primary">
+            Pedí tu presupuesto sin compromiso
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. POR QUÉ ELEGIRNOS -->
+    <section class="section-padding why-us-section" id="por-que-nosotros">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-tag">DIFERENCIALES</span>
+          <h2 class="section-title">Por qué elegir Scroll Studio</h2>
+          <p class="section-description">
+            La diferencia entre tener una página web genérica que nadie visita y una herramienta digital que trabaja para tu negocio todos los días.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          
+          <!-- Pilar 1 -->
+          <div class="why-card reveal">
+            <div class="why-number" aria-hidden="true">01</div>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="why-card-title">Diseño y código 100% a medida (sin plantillas)</h3>
+            <p class="why-card-text">
+              Nada de WordPress sobrecargado de plugins pesados que se rompen con cada actualización, ni temas repetidos que usan otros veinte negocios. Escribo el código desde cero para vos, garantizando una estética única, limpia y un sitio que te pertenece de verdad.
+            </p>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="why-card reveal">
+            <div class="why-number" aria-hidden="true">02</div>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="why-card-title">Trato directo con quien programa</h3>
+            <p class="why-card-text">
+              Hablás directamente conmigo (Thiago). Sin intermediarios, secretarias ni ejecutivos de cuenta que triangulan mensajes y distorsionan tus ideas. La comunicación es fluida, cercana y de desarrollador a cliente, ahorrándote tiempo y malentendidos.
+            </p>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="why-card reveal">
+            <div class="why-number" aria-hidden="true">03</div>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 13h5"></path>
+              </svg>
+            </div>
+            <h3 class="why-card-title">Comunicación clara y cambios hasta que quedes conforme</h3>
+            <p class="why-card-text">
+              Te voy mostrando los avances reales en links de prueba y te explico todo en español claro, sin tecnicismos innecesarios. Hacemos las revisiones que hagan falta hasta que el resultado quede exactamente como lo imaginabas, sin límites absurdos ni sorpresas.
+            </p>
+          </div>
+
+          <!-- Pilar 4 -->
+          <div class="why-card reveal">
+            <div class="why-number" aria-hidden="true">04</div>
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="why-card-title">Sitios rápidos y adaptados a celular</h3>
+            <p class="why-card-text">
+              Más del 80% de tus clientes van a entrar desde un smartphone. Programo bajo el principio mobile-first, cuidando la velocidad de carga al milisegundo para que nadie abandone la página por impaciencia y mejore tu posicionamiento en Google.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. PROCESO DE TRABAJO EN 4 PASOS -->
+    <section class="section-padding process-section" id="proceso">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-tag">CÓMO TRABAJAMOS</span>
+          <h2 class="section-title">El proceso de trabajo en 4 pasos</h2>
+          <p class="section-description">
+            Un camino claro, ordenado y sin sorpresas. Sabés en todo momento en qué estado está tu proyecto y qué sigue.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          
+          <!-- Paso 1 -->
+          <div class="process-step reveal">
+            <div class="step-badge">Paso 01</div>
+            <div class="step-card">
+              <div class="step-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <h3 class="step-title">Consulta & Diagnóstico</h3>
+              <p class="step-text">
+                Me escribís por mail contándome tu idea, tu negocio y qué necesitás resolver. Analizamos juntos el tipo de sitio ideal, tu público objetivo y definimos el alcance sin ningún compromiso.
+              </p>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="process-step reveal">
+            <div class="step-badge">Paso 02</div>
+            <div class="step-card">
+              <div class="step-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <h3 class="step-title">Propuesta y Diseño</h3>
+              <p class="step-text">
+                Te presento una propuesta clara con el presupuesto formal, los plazos de entrega y el concepto visual adaptado al 100% a la personalidad de tu marca, colores y estilo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="process-step reveal">
+            <div class="step-badge">Paso 03</div>
+            <div class="step-card">
+              <div class="step-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="step-title">Desarrollo con Revisiones</h3>
+              <p class="step-text">
+                Comienzo la programación del sitio con código limpio y moderno. Te voy compartiendo enlaces de prueba funcionales para que navegues la página y hagamos revisiones juntos hasta que quedes 100% conforme.
+              </p>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="process-step reveal">
+            <div class="step-badge">Paso 04</div>
+            <div class="step-card">
+              <div class="step-icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="step-title">Publicación y Entrega</h3>
+              <p class="step-text">
+                Conectamos tu dominio definitivo, subimos el sitio a hosting de alto rendimiento, realizamos testeos finales en diferentes celulares y pantallas, y te entrego tu página web lista para recibir clientes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. PORTFOLIO / PROYECTO DESTACADO -->
+    <section class="section-padding portfolio-section" id="portfolio">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-tag">PORTFOLIO</span>
+          <h2 class="section-title">Proyecto destacado: Todo Vinos</h2>
+          <p class="section-description">
+            Un caso de trabajo real donde combinamos diseño sobrio, navegación intuitiva y desarrollo a medida para una vinoteca online.
+          </p>
+        </div>
+
+        <div class="portfolio-showcase reveal">
+          
+          <!-- Mockup visual de navegador con la captura real del sitio -->
+          <div class="browser-mockup">
+            <div class="browser-header">
+              <div class="browser-dots" aria-hidden="true">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span class="browser-url">https://www.todo-vinos.online</span>
+              </div>
+              <div class="browser-badge">En producción</div>
+            </div>
+
+            <!-- Contenedor de la captura de pantalla real del sitio -->
+            <div class="browser-content">
+              <!-- =========================================================================
+                   CAPTURA DE PANTALLA REAL DE TODO VINOS
+                   Si querés cambiar la captura de Todo Vinos, reemplazá el archivo 
+                   assets/todo-vinos.png o actualizá la ruta src aquí.
+                   ========================================================================= -->
+              <img 
+                src="assets/todo-vinos.png" 
+                alt="Captura real de la tienda online Todo Vinos, desarrollada a medida por Scroll Studio" 
+                class="portfolio-img" 
+                loading="lazy" 
+                width="1440" 
+                height="900"
+              >
+              <div class="browser-overlay">
+                <a href="https://www.todo-vinos.online" target="_blank" rel="noopener noreferrer" class="btn btn-primary overlay-btn">
+                  <span>Abrir sitio web en vivo</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detalle explicativo del proyecto -->
+          <div class="portfolio-info">
+            <div class="portfolio-meta">
+              <span class="meta-pill">Ecommerce a medida</span>
+              <span class="meta-pill">Vinoteca & Cava Online</span>
+            </div>
+
+            <h3 class="portfolio-name">Todo Vinos — Cava Online & Bodegas Seleccionadas</h3>
+
+            <p class="portfolio-desc">
+              Desarrollo integral de una tienda online (ecommerce) diseñada exclusivamente para la venta de vinos de autor y bodegas seleccionadas de Argentina. El proyecto requirió una estética refinada, acorde al mundo del vino, priorizando la facilidad para explorar etiquetas por varietales (tintos, blancos, rosados, espumantes) y una experiencia de navegación ágil y fluida.
+            </p>
+
+            <div class="portfolio-features">
+              <div class="feature-item">
+                <div class="feature-bullet" aria-hidden="true"></div>
+                <div>
+                  <strong>Diseño a medida sin plantillas:</strong> 
+                  Tipografía cuidada, paleta sobria y jerarquía visual que destacan las botellas y bodegas.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-bullet" aria-hidden="true"></div>
+                <div>
+                  <strong>Catálogo ágil y categorizado:</strong> 
+                  Navegación instantánea entre categorías para que el usuario encuentre su vino en segundos.
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-bullet" aria-hidden="true"></div>
+                <div>
+                  <strong>Optimización Mobile-First:</strong> 
+                  Adaptación milimétrica para compras desde teléfonos celulares con tiempos de carga mínimos.
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-action-row">
+              <a href="https://www.todo-vinos.online" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>Visitar todo-vinos.online</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+
+              <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20presupuesto%20similar%20a%20Todo%20Vinos&body=Hola%20Thiago%2C%20vi%20el%20proyecto%20de%20Todo%20Vinos%20y%20me%20gustar%C3%ADa%20cotizar%20un%20sitio%20similar%20para%20mi%20negocio.%20" class="btn btn-secondary">
+                <span>Quiero un sitio así</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. TESTIMONIO -->
+    <section class="section-padding testimonial-section" id="testimonios">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <span class="section-tag">TESTIMONIO</span>
+          <h2 class="section-title">La experiencia de quienes ya confiaron</h2>
+          <p class="section-description">
+            Lo más valioso de trabajar a medida es que tu página termine siendo exactamente lo que necesitás, sin compromisos.
+          </p>
+        </div>
+
+        <div class="testimonial-wrapper reveal">
+          <div class="testimonial-card">
+            
+            <!-- Comillas decorativas -->
+            <div class="quote-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+
+            <blockquote class="testimonial-quote">
+              “Le pedí un montón de cambios y Thiago los fue haciendo uno por uno, sin ponerme trabas, hasta que la página quedó justo como la imaginaba. Hoy tengo una tienda online que se ve profesional y que es mía de verdad.”
+            </blockquote>
+
+            <div class="testimonial-footer">
+              <div class="client-avatar" aria-hidden="true">
+                <span>MP</span>
+              </div>
+              <div class="client-info">
+                <cite class="client-name">Mateo Pradines</cite>
+                <span class="client-role">Dueño de la vinoteca Todo Vinos</span>
+                <span class="client-project-link">
+                  Proyecto: <a href="https://www.todo-vinos.online" target="_blank" rel="noopener noreferrer">todo-vinos.online ↗</a>
+                </span>
+              </div>
+              <div class="testimonial-badge" aria-label="Cliente verificado">
+                <span class="badge-icon" aria-hidden="true">★</span>
+                <span>Cliente verificado</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. SOBRE MÍ -->
+    <section class="section-padding about-section" id="sobre-mi">
+      <div class="container">
+        
+        <div class="about-grid">
+          
+          <!-- Columna Izquierda: Información de Thiago -->
+          <div class="about-content reveal">
+            <span class="section-tag">SOBRE MÍ</span>
+            <h2 class="section-title">Quién está detrás de Scroll Studio</h2>
+            
+            <p class="about-bio lead">
+              Soy <strong>Thiago Paulovich Garcia</strong>, estudiante de carreras de ingeniería/sistemas y desarrollador web freelance en Argentina.
+            </p>
+            
+            <p class="about-bio">
+              Me dedico a crear páginas web para negocios, pymes, profesionales y emprendedores con un enfoque que va más allá de simplemente escribir líneas de código: me interesa entender a fondo el modelo de negocio de cada cliente, qué busca su público y cómo construir una web que transmita confianza inmediata y genere consultas concretas.
+            </p>
+
+            <p class="about-bio">
+              Al no utilizar plantillas enlatadas ni plataformas rígidas, puedo garantizarte un trabajo artesanal, transparente y cuidado en cada detalle. Trabajo de manera cercana, directa y con el compromiso de que quedes 100% conforme con el resultado final.
+            </p>
+
+            <div class="about-cta-row">
+              <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%20quisiera%20hacerte%20una%20consulta%20para%20mi%20sitio%20web." class="btn btn-primary">
+                <span>Escribile a Thiago</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <span class="email-note">Respondo habitualmente en el día</span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Tarjetas de enfoque y principios -->
+          <div class="about-pillars reveal">
+            
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="pillar-title">Formación en ingeniería y sistemas</h3>
+                <p class="pillar-text">Pensamiento estructurado, rigor técnico y constante actualización en estándares modernos para que tu web sea rápida, segura y escalable.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="pillar-title">Ganas de entender tu negocio</h3>
+                <p class="pillar-text">Antes de tocar una sola línea de código, busco comprender qué vendés, a quién le hablás y qué diferencial te distingue de tu competencia.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="pillar-title">Compromiso y dedicación freelance</h3>
+                <p class="pillar-text">Atención personalizada y paciente. Tu proyecto no es un número más: tiene mi dedicación completa de principio a fin.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. CIERRE CON CTA GRANDE -->
+    <section class="section-padding cta-section" id="contacto">
+      <div class="cta-glow-bg" aria-hidden="true"></div>
+      <div class="container">
+        
+        <div class="cta-box reveal">
+          <span class="cta-tag">¿LISTO PARA EMPEZAR?</span>
+          <h2 class="cta-title">¿Tenés un proyecto en mente? Escribime</h2>
+          <p class="cta-description">
+            Contame qué estás buscando para tu negocio y te respondo con una propuesta clara y un presupuesto a medida. Sin vueltas, sin plantillas y sin ningún compromiso.
+          </p>
+
+          <div class="cta-actions">
+            <!-- Botón principal de mailto -->
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio&body=Hola%20Thiago%2C%0A%0AQuisiera%20pedirte%20presupuesto%20para%20un%20proyecto%20web.%0A%0A-%20Nombre%20o%20marca%3A%20%0A-%20Tipo%20de%20sitio%20(Landing%20%2F%20Institucional%20%2F%20Ecommerce%20%2F%20Profesional%20%2F%20A%20medida)%3A%20%0A-%20Detalles%20de%20la%20idea%3A%20%0A%0AGracias!" class="btn btn-xl btn-primary cta-main-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Pedí tu presupuesto</span>
+            </a>
+
+            <!-- Copiar email rápido -->
+            <button type="button" class="btn btn-xl btn-secondary copy-email-btn" id="copy-email-btn" data-email="Thiagopgnqn@gmail.com" aria-label="Copiar dirección de email al portapapeles">
+              <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span class="copy-text">Copiar email</span>
+            </button>
+          </div>
+
+          <!-- Email visible de contacto -->
+          <div class="cta-direct-email">
+            <span class="email-label">O escribime directamente a:</span>
+            <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio" class="email-link">
+              Thiagopgnqn@gmail.com
+            </a>
+          </div>
+
+          <p class="cta-guarantee">
+            <span class="guarantee-icon" aria-hidden="true">✦</span>
+            Presupuesto personalizado y asesoramiento sin costo ni compromiso.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Logo y descripción -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" aria-label="Scroll Studio - Inicio">
+            <span class="logo-icon-wrapper" aria-hidden="true">
+              <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="rgba(0, 245, 160, 0.12)" />
+                <path d="M21 10C21 8.34315 19.6569 7 18 7H13C10.2386 7 8 9.23858 8 12C8 14.7614 10.2386 17 13 17H19C21.7614 17 24 19.2386 24 22C24 24.7614 21.7614 27 19 27H12C10.3431 27 9 25.6569 9 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16" cy="17" r="1.5" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="brand-text">Scroll<span class="brand-accent">Studio</span></span>
+          </a>
+          <p class="footer-desc">
+            Estudio de desarrollo web freelance por <strong>Thiago Paulovich Garcia</strong>. Creamos páginas web a medida para negocios, pymes y profesionales en Argentina y el mundo.
+          </p>
+          <div class="footer-location">
+            <span class="location-dot" aria-hidden="true"></span>
+            Argentina · Trabajo remoto para todo el país
+          </div>
+        </div>
+
+        <!-- Enlaces rápidos de navegación -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#por-que-nosotros">Por qué elegirnos</a></li>
+            <li><a href="#proceso">Proceso de trabajo</a></li>
+            <li><a href="#portfolio">Proyecto Todo Vinos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna de contacto -->
+        <div class="footer-contact-col">
+          <h4 class="footer-col-title">Contacto</h4>
+          <p class="footer-contact-text">¿Querés empezar a trabajar en tu web?</p>
+          <a href="mailto:Thiagopgnqn@gmail.com?subject=Consulta%20de%20presupuesto%20-%20Scroll%20Studio" class="footer-email-link">
+            Thiagopgnqn@gmail.com
+          </a>
+          <div class="footer-badge-custom">
+            <span>Código 100% artesanal</span>
+            <small>Sin plantillas prearmadas</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year">2026</span> Scroll Studio. Desarrollado por <strong>Thiago Paulovich Garcia</strong>. Todos los derechos reservados.
+        </p>
+        <p class="footer-made-with">
+          Programado con HTML5, CSS moderno y JS vanilla. Carga rápida y diseño responsivo.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script principal vanilla JS -->
+  <script src="script.js"></script>
+</body>
+</html>
