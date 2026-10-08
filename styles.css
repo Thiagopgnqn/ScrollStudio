@@ -1879,3 +1879,484 @@ h1, h2, h3, h4 {
     animation: none !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   17. BOTONES DIRECTOS, MODAL DE CONTACTO & TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+
+/* Botón directo de Gmail */
+.btn-gmail-direct {
+  background: rgba(234, 67, 53, 0.12);
+  border: 1px solid rgba(234, 67, 53, 0.45);
+  color: #ffffff;
+}
+
+.btn-gmail-direct:hover {
+  background: rgba(234, 67, 53, 0.22);
+  border-color: #ea4335;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(234, 67, 53, 0.35);
+}
+
+.icon-gmail-svg {
+  width: 20px;
+  height: 20px;
+  color: #ea4335;
+  flex-shrink: 0;
+}
+
+/* Botón CTA dentro del menú mobile drawer */
+.nav-mobile-cta-item {
+  display: block;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+  .nav-mobile-cta-item {
+    display: none;
+  }
+}
+
+.nav-mobile-cta {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 20px;
+  font-size: 1rem;
+}
+
+/* Backdrop del Modal */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(4, 6, 10, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Diálogo del Modal */
+.contact-modal-dialog {
+  background: linear-gradient(180deg, #101524 0%, #090c16 100%);
+  border: 1px solid rgba(0, 245, 160, 0.32);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 245, 160, 0.15);
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px 30px;
+  position: relative;
+  transform: scale(0.94) translateY(12px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.contact-modal-backdrop.is-open .contact-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Botón cerrar */
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+/* Encabezado del modal */
+.modal-header {
+  margin-bottom: 20px;
+  padding-right: 36px;
+}
+
+.modal-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.modal-title {
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  margin-bottom: 10px;
+}
+
+.modal-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Badge de servicio contextual */
+.modal-service-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 245, 160, 0.08);
+  border: 1px solid rgba(0, 245, 160, 0.22);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  margin-bottom: 22px;
+  width: fit-content;
+}
+
+.pill-label {
+  color: var(--text-muted);
+}
+
+.modal-service-pill strong {
+  color: var(--color-accent);
+}
+
+/* Canales de contacto directos */
+.modal-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.modal-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.channel-gmail {
+  background: rgba(234, 67, 53, 0.07);
+  border: 1px solid rgba(234, 67, 53, 0.32);
+  color: var(--text-main);
+}
+
+.channel-gmail:hover {
+  background: rgba(234, 67, 53, 0.16);
+  border-color: rgba(234, 67, 53, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.2);
+}
+
+.channel-mailto {
+  background: rgba(0, 245, 160, 0.06);
+  border: 1px solid rgba(0, 245, 160, 0.28);
+  color: var(--text-main);
+}
+
+.channel-mailto:hover {
+  background: rgba(0, 245, 160, 0.14);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--color-accent-glow);
+}
+
+.channel-copy {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  width: 100%;
+}
+
+.channel-copy:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.channel-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-icon-box svg {
+  width: 22px;
+  height: 22px;
+}
+
+.gmail-icon {
+  background: rgba(234, 67, 53, 0.15);
+  color: #ea4335;
+}
+
+.mailto-icon {
+  background: rgba(0, 245, 160, 0.12);
+  color: var(--color-accent);
+}
+
+.copy-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+}
+
+.channel-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.channel-info strong {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.channel-info span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.modal-email-preview {
+  color: var(--color-accent) !important;
+  font-family: monospace;
+  font-size: 0.84rem !important;
+}
+
+.channel-action-badge {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.channel-gmail:hover .channel-action-badge {
+  background: #ea4335;
+  color: #fff;
+}
+
+.channel-mailto:hover .channel-action-badge {
+  background: var(--color-accent);
+  color: var(--text-inverse);
+}
+
+.channel-copy:hover .channel-action-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.badge-copy.copied {
+  background: var(--color-accent) !important;
+  color: var(--text-inverse) !important;
+}
+
+/* Compositor rápido dentro del modal */
+.modal-composer {
+  background: rgba(6, 9, 15, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.composer-header {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.composer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 500px) {
+  .form-row {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #090c14;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 10px rgba(0, 245, 160, 0.2);
+}
+
+.composer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.composer-actions .btn {
+  flex-grow: 1;
+}
+
+.composer-send-gmail {
+  background: #ea4335;
+  border-color: #ea4335;
+  color: #fff;
+}
+
+.composer-send-gmail:hover {
+  background: #d93025;
+  border-color: #d93025;
+  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.35);
+}
+
+/* Nota al pie del modal */
+.modal-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.modal-footer-note svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Toast flotante de notificación */
+.toast-notification {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 3000;
+  background: #0c1524;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-full);
+  padding: 12px 22px;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 245, 160, 0.25);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
